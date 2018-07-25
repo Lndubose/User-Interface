@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5 {
 /* Share features */
 .innovation, .information {
   border-bottom: 2px solid black;
-}
+} 
 
 
 /* header and navigation */
@@ -41,7 +41,8 @@ header {
 
 
 nav a {
-  padding: 8px 59px 15px 8px;
+  display: inline-block;
+  padding: 3px 59px 15px 8px;
   color: black;
   text-decoration: none;
   font-weight: bold;
@@ -63,34 +64,27 @@ nav {
 }
 
 nav a:hover {
-  color: white;
+  color: yellow;
   transition: color 0.5s ease-out;
 }
 
-@keyframes zoomIn {
-  0% {
-    font-size: 16px;
+@keyframes wobble {
+  0%, 50%, 100% {
+    transform: translate(0,0);
   }
 
   25% {
-    font-size: 17px;
-  }
-
-  50% {
-    font-size: 18px;
+    transform: translate(4px);
   }
 
   75% {
-    font-size: 19px;
-  }
-
-  100% {
-    font-size: 20px;
+    transform: translate(-4px);
   }
 }
 
+
 nav a:hover {
-   animation: zoomIn 0.3s linear 2 alternate;
+   animation: wobble 0.4s linear 1;
 }
 
 nav a:active {
@@ -137,6 +131,27 @@ nav a:active {
   color: inherit;
   font-weight: bold;
   border: 2px solid black;
+}
+
+.innovate a:hover {
+  animation: swing 0.5s linear .12s alternate;
+  background-color: black;
+  color: white;
+  transition: background-color 0.5s linear .12s, color 0.5s linear .12s;
+}
+
+@keyframes swing {
+  0%, 50%, 100% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(15deg);
+  }
+
+  75% {
+    transform: rotate(-15deg);
+  }
 }
 
 /* Section Info */
